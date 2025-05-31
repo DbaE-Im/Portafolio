@@ -1,0 +1,116 @@
+<section id="proyectos" class="flex flex-col items-center justify-center mt-8 w-full scroll-mt-30 py-8">
+    <div class="flex items-center justify-center w-full py-2">
+        <div class="w-full h-px bg-black"></div>
+        <span class="px-4 text-black font-bold text-3xl">Proyectos</span>
+        <div class="w-full h-px bg-black"></div>
+    </div>
+    <p class="text-black text-xl text-center">En esta sección, encontrarás una lista de proyectos en los que he trabajado. Cada proyecto incluye una breve descripción y un enlace para ver más detalles.</p>
+    
+    <div class="mt-8 grid md:grid-cols-3 gap-6 sm:grid-cols-1">
+        <!-- Proyecto 1 -->
+        <div class="p-6 flex flex-col items-center bg-gray-100 rounded shadow-black shadow-2xl gap-4">
+            <img src="src/assets/QR.png" alt="generador QR" class="m-4 w-[300px] h-[300px]">
+            <h2 class="text-2xl font-bold text-center">Generador QR</h2>
+            <p class="text-center font-semibold">Pagina que genera un QR a partir de URL, gmail o textos.</p>
+            <button onclick="document.getElementById('modal1').showModal()" class="border px-6 py-2 rounded hover:bg-black hover:text-white cursor-pointer">Ver más</button>
+        </div>
+        
+        <!-- Proyecto 2 -->
+        <div class="p-6 flex flex-col items-center bg-gray-100 rounded shadow-black shadow-2xl gap-4">
+            <img src="src/assets/Todoapp.png" alt="to-do app" class="m-4 w-[300px] h-[300px]">
+            <h2 class="text-2xl font-bold text-center">To-do app</h2>
+            <p class="text-center font-semibold">Pagina que ayuda a organizar tareas de manera eficiente.</p>
+            <button onclick="document.getElementById('modal2').showModal()" class="border px-6 py-2 rounded hover:bg-black hover:text-white cursor-pointer">Ver más</button>
+        </div>
+        
+        <!-- Proyecto 3 -->
+        <div class="p-6 flex flex-col items-center bg-gray-100 rounded shadow-black shadow-2xl gap-4">
+            <img src="src/assets/ppt.png" alt="piedra papel o tijera" class="m-4 w-[300px] h-[300px]">
+            <h2 class="text-2xl font-bold text-center">Piedra, Papel o Tijera</h2>
+            <p class="text-center font-semibold">Pagina que simula el clasico juego de piedra, papel o tijera.</p>
+            <button onclick="document.getElementById('modal3').showModal()" class="border px-6 py-2 rounded hover:bg-black hover:text-white cursor-pointer">Ver más</button>
+        </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <dialog id="modal1" class="rounded-xl space-y-6 p-10">
+        <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold">Generador QR</h2>
+            <button onclick="document.getElementById('modal1').close()" class="text-red-700 font-bold text-2xl cursor-pointer">X</button>
+        </div>
+        <p class="text-xl">¿Alguna vez has deseado hacer un QR y no sabias como? Con esta pagina es muy sencilla de realizarlo, solo tiene que ingresar el URL, texto o correo electronico que quieras hacerlo QR y poder descargarlo en el color que desees.</p>
+        <div class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold">Tecnologías Usadas:</h2>
+            <div class="flex flex-row gap-4">
+                <i class="bi bi-javascript text-3xl"></i>
+                <i class="bi bi-filetype-html text-3xl"></i>
+                <i class="bi bi-css text-3xl"></i>
+                <img src="src/assets/vite.svg" alt="vite" width="30" height="30">
+                <img src="src/assets/tailwind.svg" alt="tailwind" width="30" height="30">
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a href="https://jolly-choux-dc05b1.netlify.app/" target="_blank" class="border px-6 py-2 rounded hover:bg-black hover:text-white">Ir al sitio</a>
+        </div>
+    </dialog>
+
+    <!-- Modal 2 -->
+    <dialog id="modal2" class="rounded-xl space-y-6 p-10">
+        <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold">To-do app</h2>
+            <button onclick="document.getElementById('modal2').close()" class="text-red-700 font-bold text-2xl cursor-pointer">X</button>
+        </div>
+        <p class="text-xl">Aplicación para gestionar tus tareas diarias con funcionalidades completas para añadir, editar y eliminar tareas, con persistencia de datos.</p>
+        <div class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold">Tecnologías Usadas:</h2>
+            <div class="flex flex-row gap-4">
+                <i class="bi bi-javascript text-3xl"></i>
+                <i class="bi bi-filetype-html text-3xl"></i>
+                <i class="bi bi-css text-3xl"></i>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a href="https://subtle-jalebi-09db52.netlify.app/" target="_blank" class="border px-6 py-2 rounded hover:bg-black hover:text-white">Ir al sitio</a>
+        </div>
+    </dialog>
+
+    <!-- Modal 3 -->
+    <dialog id="modal3" class="rounded-xl space-y-6 p-10">
+        <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold">Piedra, Papel o Tijera</h2>
+            <button onclick="document.getElementById('modal3').close()" class="text-red-700 font-bold text-2xl cursor-pointer">X</button>
+        </div>
+        <p class="text-xl">¿Quien no ha jugado el clasico juego de piedra, papel o tijera? Se ha jugado en el colegio, en casa e incluso el trabajo, lo pueden jugar simplemente para pasar el momento o para tomar desiciones, es entretenido. Por eso desarrolle ese clasico juego en una pantalla para demostrar quien es superior, el humano o la PC. Que empiece el juego.</p>
+        <div class="flex flex-col gap-4">
+            <h2 class="text-2xl font-bold">Tecnologías Usadas:</h2>
+            <div class="flex flex-row gap-4">
+                <i class="bi bi-javascript text-3xl"></i>
+                <i class="bi bi-filetype-html text-3xl"></i>
+                <i class="bi bi-css text-3xl"></i>
+                <i class="bi bi-bootstrap-fill text-3xl"></i>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a href="#" class="border px-6 py-2 rounded hover:bg-black hover:text-white">Ir al sitio</a>
+        </div>
+    </dialog>
+</section>
+
+<style>
+    dialog {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        max-width: 500px;
+        background-color: white;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+    
+    dialog::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+</style>

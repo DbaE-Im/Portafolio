@@ -1,0 +1,50 @@
+<nav class="sticky top-0 z-50 px-6 py-10 bg-gradient-to-r from-blue-500 via-blue-300 to-white backdrop-blur-sm bg-opacity-80">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#inicio" class="text-4xl font-bold text-yellow-400 hover:text-yellow-300 transition">&lt;DbaE&gt;</a>
+        
+        <!-- Menú Desktop -->
+        <div class="sm:hidden md:flex space-x-2">
+            <a href="#sobremi" class="px-4 py-2 font-semibold text-black hover:bg-blue-500 hover:text-white rounded-lg transition border border-transparent hover:border-white">
+                Sobre mi
+            </a>
+            <a href="#proyectos" class="px-4 py-2 font-semibold text-black hover:bg-blue-500 hover:text-white rounded-lg transition border border-transparent hover:border-white">
+                Proyectos
+            </a>
+            <a href="#contacto" class="px-4 py-2 font-semibold text-black hover:bg-blue-500 hover:text-white rounded-lg transition border border-transparent hover:border-white">
+                Contactame
+            </a>
+        </div>
+        
+        <!-- Botón Mobile -->
+        <button id="menu-toggle" class="md:hidden text-2xl focus:outline-none">
+            <i class="bi bi-list"></i>
+        </button>
+    </div>
+    
+    <!-- Menú Mobile -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white bg-opacity-90 mt-2 rounded-lg shadow-lg">
+        <div class="flex flex-col p-4 space-y-3">
+            <a href="#sobremi" class="px-4 py-3 font-semibold text-black hover:bg-blue-500 hover:text-white rounded-lg transition">
+                Sobre mi
+            </a>
+            <a href="#proyectos" class="px-4 py-3 font-semibold text-black hover:bg-blue-500 hover:text-white rounded-lg transition">
+                Proyectos
+            </a>
+            <a href="#contacto" class="px-4 py-3 font-semibold text-black hover:bg-blue-500 hover:text-white rounded-lg transition">
+                Contactame
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden');
+        });
+    }
+</script>

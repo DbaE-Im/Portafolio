@@ -1,0 +1,93 @@
+<section id="contacto" class="mt-8 py-8 flex flex-col md:flex-row justify-center items-center gap-20 scroll-mt-30">
+    <!-- Formulario -->
+        <div class="border-2 bg-white p-6 md:p-10 rounded-md w-full md:w-[500px]">
+            <h2 class="text-black text-3xl text-center font-bold">Contactame</h2>
+            <form id="form" action="https://formspree.io/f/mdkznony" method="post" class="flex flex-col gap-4 mt-4">
+                <div>
+                    <label for="nombre" class="text-black block font-semibold">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="border-2 border-gray-300 rounded-md p-2 w-full" required>
+                </div>
+                <div>
+                    <label for="email" class="text-black block font-semibold">Email</label>
+                    <input type="email" name="email" id="email" class="border-2 border-gray-300 rounded-md p-2 w-full" required>
+                </div>
+                <div>
+                    <label for="mensaje" class="text-black block font-semibold">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" class="border-2 border-gray-300 rounded-md p-2 w-full" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="bg-black text-white font-semibold py-2 px-4 rounded-md hover:bg-gray-800 transition-colors">Enviar</button>
+            </form>
+            <!-- Loader oculto por defecto -->
+            <div id="loader" class="hidden mt-4 flex justify-center items-center">
+                <div class="animate-spin rounded-full h-8 w-8 border-4 border-black border-t-transparent"></div>
+            </div>
+            <!-- Mensaje de exito o fallo -->
+            <p id="message" class="hidden mt-4 text-center font-semibold"></p>
+        </div>
+        <!-- Redes -->
+        <div class="flex flex-col gap-4 border-2 p-6 rounded-lg">
+            <h2 class="text-3xl font-bold text-center">Mis Redes</h2>
+            <a href="https://github.com/DbaE-Im" class="flex items-center gap-2 hover:text-gray-500" target="_blank">
+                <i class="bi bi-github text-2xl"></i>
+                <span>DbaE-Im</span>
+            </a>
+            <a href="https://www.instagram.com/danielalcedo20/" class="flex items-center gap-2 hover:text-gray-500" target="_blank">
+                <i class="bi bi-instagram text-2xl"></i>
+                <span>danielalcedo20</span>
+            </a>
+            <a href="https://www.linkedin.com/in/daniel-alcedo/" class="flex items-center gap-2 hover:text-gray-500" target="_blank">
+                <i class="bi bi-linkedin text-2xl"></i>
+                <span>Daniel Alcedo</span>
+            </a>
+        </div>
+</section>
+
+<script>
+    const form = document.querySelector("#form") as HTMLFormElement | null;
+    const loader = document.getElementById("loader") as HTMLElement | null;
+    const message = document.getElementById("message") as HTMLElement | null;
+
+    if (form && loader && message) {
+        form.addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        loader.classList.remove("hidden");
+        message.classList.add("hidden");
+        message.textContent = "";
+
+        const formData = new FormData(form);
+
+        try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+            Accept: "application/json"
+            }
+        });
+
+        if (response.ok) {
+            form.reset();
+            message.textContent = "✅ Gracias por contactarme.";
+            message.classList.remove("hidden");
+            message.classList.remove("text-red-600");
+            message.classList.add("text-green-600");
+        } else {
+            throw new Error("Error al enviar el formulario.");
+        }
+        } catch (error) {
+            message.textContent = "❌ Ocurrió un error. Intenta nuevamente.";
+            message.classList.remove("hidden");
+            message.classList.remove("text-green-600");
+            message.classList.add("text-red-600");
+            console.error(error);
+        } finally {
+            loader.classList.add("hidden");    
+        }
+    });
+    } else {
+        console.error("Formulario, loader o mensaje no encontrados");
+    }
+</script>
+
+

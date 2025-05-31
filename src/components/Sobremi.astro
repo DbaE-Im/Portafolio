@@ -1,0 +1,60 @@
+<section id="sobremi" class="mt-8 py-8 flex justify-center items-center flex-col scroll-mt-35">
+    <!-- Zona superior -->
+    <div class="w-full max-w-4xl text-center mb-8 px-4">
+        <h2 class="text-3xl font-bold text-black">Daniel Bryce Alcedo Escamilo</h2>
+        <p class="text-black mt-2 text-xl">Aquí te cuento un poco sobre mi recorrido, experiencias y aprendizajes más importantes.</p>
+    </div>
+    <div class="flex flex-col gap-2 w-full">
+        <!-- Item 1 -->
+        <div class="acord hover:scale-101 transform duration-200 cursor-pointer">
+            <h2 class="text-white p-6 bg-black w-full h-full text-2xl font-semibold text-center rounded-md">¿Quien soy?</h2>
+            <p class="info text-black p-4 bg-white text-center border-2 rounded-b-md text-xl hidden">
+                Hola, tengo 21 años, soy de Lima-Perú, actualmente estoy estudiando en la universidad UTP la carrera de ingenieria de sistemas e informatica.
+            </p>
+        </div>
+        
+        <!-- Item 2 -->
+        <div class="acord hover:scale-101 transform duration-200 cursor-pointer">
+            <h2 class="text-white p-6 bg-black w-full h-full text-2xl font-semibold text-center rounded-md">Formación académica</h2>
+            <p class="info text-black p-4 bg-white text-center border-2 rounded-b-md text-xl hidden">
+                Desde el 2022 estudio en la Universidad Tecnológica del Perú (UTP), donde he desarrollado habilidades en programación, cuento con un certificado de Fundamentos en Python I de los cursos de CISCO, tengo conocimientos en tecnologías como HTML, CSS, JavaScript, Tailwind, Git y tengo conocimientos en bases de datos como MySQL y PostgreSQL, también estoy aprendiendo frameworks como React y Astro gracias al bootcamp "Nomada".
+            </p>
+        </div>
+        
+        <!-- Item 3 -->
+        <div class="acord hover:scale-101 transform duration-200 cursor-pointer">
+            <h2 class="text-white p-6 bg-black w-full h-full text-2xl font-semibold text-center rounded-md">Experiencia y proyectos</h2>
+            <p class="info text-black p-4 bg-white text-center border-2 rounded-b-md text-xl hidden">
+                He realizado proyectos junto a compañeros del bootcamp "Nomada", proyectos que podran visualizar mas adelante.
+            </p>
+        </div>
+        
+        <!-- Item 4 -->
+        <div class="acord hover:scale-101 transform duration-200 cursor-pointer">
+            <h2 class="text-white p-6 bg-black w-full h-full text-2xl font-semibold text-center rounded-md">Objetivos</h2>
+            <p class="info text-black p-4 bg-white text-center border-2 rounded-b-md text-xl hidden">
+                Mi objetivo es convertirme en desarrollador full stack, contribuir a proyectos de impacto y seguir creciendo profesional y personalmente en el mundo tech.
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.querySelectorAll('.acord').forEach(acordion => {
+        acordion.addEventListener('click', () => {
+            // Cerrar todos los demás acordeones
+            document.querySelectorAll('.acord .info').forEach(info => {
+                if (info !== acordion.querySelector('.info')) {
+                    info.classList.add('hidden');
+                }
+            });
+            
+            // Alternar el acordeón clickeado
+            const info = acordion.querySelector('.info');
+            info.classList.toggle('hidden');
+            
+            // Opcional: Añadir animación suave
+            info.style.transition = 'all 0.3s ease';
+        });
+    });
+</script>
